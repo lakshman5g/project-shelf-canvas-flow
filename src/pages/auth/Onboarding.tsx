@@ -11,7 +11,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { toast } from 'sonner';
-import { User } from 'lucide-react';
+import { UserPlus } from 'lucide-react';
 
 // Form validation schema
 const profileSchema = z.object({
@@ -103,7 +103,7 @@ const Onboarding = () => {
                 className="absolute bottom-0 right-0 rounded-full w-8 h-8 p-0"
                 onClick={handleAvatarUpload}
               >
-                <User className="h-4 w-4" />
+                <UserPlus className="h-4 w-4" />
                 <span className="sr-only">Upload avatar</span>
               </Button>
             </div>
