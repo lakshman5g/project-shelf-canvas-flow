@@ -5,9 +5,10 @@ import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
+import { Project } from '@/types/project';
 
 interface ProjectGridProps {
-  projects: any[];
+  projects: Project[];
   view: 'grid' | 'list';
 }
 

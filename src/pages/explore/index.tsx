@@ -16,6 +16,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Grid3X3, Rows } from 'lucide-react';
+import { Project } from '@/types/project';
 
 export default function Explore() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -35,7 +36,7 @@ export default function Explore() {
         .order('created_at', { ascending: false });
       
       if (error) throw error;
-      return data;
+      return data as Project[];
     }
   });
 

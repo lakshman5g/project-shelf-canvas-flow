@@ -13,6 +13,7 @@ import { ProjectTimeline } from '@/components/projects/ProjectTimeline';
 import { ProjectTools } from '@/components/projects/ProjectTools';
 import { ProjectAnalytics } from '@/components/projects/ProjectAnalytics';
 import { ArrowLeft, Calendar, Link2, Share2 } from 'lucide-react';
+import { Project, ProjectMedia, ProjectTimeline as ProjectTimelineType, ProjectTool, ProjectAnalytic } from '@/types/project';
 
 export default function ProjectDetail() {
   const { id } = useParams<{ id: string }>();
@@ -30,7 +31,7 @@ export default function ProjectDetail() {
         .single();
         
       if (error) throw error;
-      return data;
+      return data as Project;
     }
   });
 
@@ -44,7 +45,7 @@ export default function ProjectDetail() {
         .order('display_order', { ascending: true });
         
       if (error) throw error;
-      return data;
+      return data as ProjectMedia[];
     },
     enabled: !!id
   });
@@ -59,7 +60,7 @@ export default function ProjectDetail() {
         .order('milestone_date', { ascending: true });
         
       if (error) throw error;
-      return data;
+      return data as ProjectTimelineType[];
     },
     enabled: !!id
   });
@@ -73,7 +74,7 @@ export default function ProjectDetail() {
         .eq('project_id', id);
         
       if (error) throw error;
-      return data;
+      return data as ProjectTool[];
     },
     enabled: !!id
   });
@@ -88,7 +89,7 @@ export default function ProjectDetail() {
         .order('display_order', { ascending: true });
         
       if (error) throw error;
-      return data;
+      return data as ProjectAnalytic[];
     },
     enabled: !!id
   });
@@ -258,7 +259,7 @@ function getStatusBadge(status: string): string {
   }
 }
 
-function formatDateRange(startDate: string | null, endDate: string | null): string {
+function formatDateRange(startDate: string | null | undefined, endDate: string | null | undefined): string {
   if (!startDate) return 'No date specified';
   
   const start = new Date(startDate);

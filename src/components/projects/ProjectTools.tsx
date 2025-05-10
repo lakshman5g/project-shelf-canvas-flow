@@ -1,9 +1,10 @@
 
 import React from 'react';
 import { Badge } from '@/components/ui/badge';
+import { ProjectTool } from '@/types/project';
 
 interface ProjectToolsProps {
-  tools: any[];
+  tools: ProjectTool[];
 }
 
 export function ProjectTools({ tools }: ProjectToolsProps) {
@@ -15,7 +16,7 @@ export function ProjectTools({ tools }: ProjectToolsProps) {
     }
     acc[category].push(tool);
     return acc;
-  }, {} as Record<string, any[]>);
+  }, {} as Record<string, ProjectTool[]>);
 
   return (
     <div className="space-y-8">
