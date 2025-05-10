@@ -9,7 +9,7 @@ import { TypographySettings } from '@/components/theme/TypographySettings';
 import { LayoutSettings } from '@/components/theme/LayoutSettings';
 import { ThemePreview } from '@/components/theme/ThemePreview';
 import { ThemeSelect } from '@/components/theme/ThemeSelect';
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 import { Paintbrush, Save, RotateCcw, Check } from 'lucide-react';
 
 export default function ThemeCustomizer() {
@@ -48,7 +48,7 @@ export default function ThemeCustomizer() {
       toast({
         title: "Theme applied",
         description: "Your theme changes have been applied to your portfolio.",
-        icon: <Check className="h-4 w-4 text-green-500" />
+        // Removing the icon property as it's not supported in the Toast type
       });
     }, 1500);
   };
@@ -169,3 +169,4 @@ export default function ThemeCustomizer() {
     </DashboardLayout>
   );
 }
+
