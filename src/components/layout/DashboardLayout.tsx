@@ -51,7 +51,7 @@ export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
   return (
     <SidebarProvider>
       <div className="min-h-screen flex w-full bg-background">
-        <Sidebar collapsible className={cn(
+        <Sidebar collapsible="icon" className={cn(
           sidebarCollapsed ? "w-16" : "w-64",
           "border-r transition-all duration-300 ease-in-out"
         )}>
@@ -74,7 +74,7 @@ export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
           </div>
 
           <SidebarContent>
-            <SidebarGroup defaultOpen>
+            <SidebarGroup>
               {!sidebarCollapsed && <SidebarGroupLabel>Menu</SidebarGroupLabel>}
               <SidebarGroupContent>
                 <SidebarMenu>

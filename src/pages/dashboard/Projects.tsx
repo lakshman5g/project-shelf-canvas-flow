@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import { Plus, MoreHorizontal, Eye, Pencil, Trash2 } from 'lucide-react';
+import { Folder } from '@/components/Folder';
 import {
   DropdownMenu,
   DropdownMenuContent,
