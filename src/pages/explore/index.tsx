@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { ProjectGrid } from '@/components/projects/ProjectGrid';
@@ -16,6 +17,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Grid3X3, Rows } from 'lucide-react';
 import { Project } from '@/types/project';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 export default function Explore() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -104,6 +106,8 @@ export default function Explore() {
                 <Rows className="h-4 w-4" />
               </Button>
             </div>
+
+            <ThemeToggle />
           </div>
         </div>
 

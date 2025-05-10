@@ -21,6 +21,8 @@ import ProjectDetail from "@/pages/projects/[id]";
 // Dashboard pages
 import Dashboard from "@/pages/dashboard/Dashboard";
 import Projects from "@/pages/dashboard/Projects";
+import Analytics from "@/pages/dashboard/Analytics";
+import ThemeCustomizer from "@/pages/dashboard/ThemeCustomizer";
 
 const queryClient = new QueryClient();
 
@@ -63,6 +65,22 @@ const App = () => (
                 element={
                   <ProtectedRoute>
                     <Projects />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/dashboard/analytics"
+                element={
+                  <ProtectedRoute>
+                    <Analytics />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/dashboard/theme"
+                element={
+                  <ProtectedRoute>
+                    <ThemeCustomizer />
                   </ProtectedRoute>
                 }
               />
