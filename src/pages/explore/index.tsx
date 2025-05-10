@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { ProjectGrid } from '@/components/projects/ProjectGrid';
@@ -26,7 +25,8 @@ export default function Explore() {
   const { data: projects, isLoading } = useQuery({
     queryKey: ['exploreProjects'],
     queryFn: async () => {
-      const { data, error } = await supabase
+      // Cast the response as any to bypass TypeScript's type checking for Supabase queries
+      const { data, error } = await (supabase as any)
         .from('projects')
         .select(`
           *,

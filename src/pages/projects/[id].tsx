@@ -21,7 +21,7 @@ export default function ProjectDetail() {
   const { data: project, isLoading } = useQuery({
     queryKey: ['project', id],
     queryFn: async () => {
-      const { data, error } = await supabase
+      const { data, error } = await (supabase as any)
         .from('projects')
         .select(`
           *,
@@ -38,7 +38,7 @@ export default function ProjectDetail() {
   const { data: media } = useQuery({
     queryKey: ['projectMedia', id],
     queryFn: async () => {
-      const { data, error } = await supabase
+      const { data, error } = await (supabase as any)
         .from('project_media')
         .select('*')
         .eq('project_id', id)
@@ -53,7 +53,7 @@ export default function ProjectDetail() {
   const { data: timeline } = useQuery({
     queryKey: ['projectTimeline', id],
     queryFn: async () => {
-      const { data, error } = await supabase
+      const { data, error } = await (supabase as any)
         .from('project_timeline')
         .select('*')
         .eq('project_id', id)
@@ -68,7 +68,7 @@ export default function ProjectDetail() {
   const { data: tools } = useQuery({
     queryKey: ['projectTools', id],
     queryFn: async () => {
-      const { data, error } = await supabase
+      const { data, error } = await (supabase as any)
         .from('project_tools')
         .select('*')
         .eq('project_id', id);
@@ -82,7 +82,7 @@ export default function ProjectDetail() {
   const { data: analytics } = useQuery({
     queryKey: ['projectAnalytics', id],
     queryFn: async () => {
-      const { data, error } = await supabase
+      const { data, error } = await (supabase as any)
         .from('analytics')
         .select('*')
         .eq('project_id', id)
